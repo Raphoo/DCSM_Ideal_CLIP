@@ -58,7 +58,7 @@ Note that whatsup_vlms is from ["What's Up with Vision Language Models?"](https:
 ## Data
 
 Populate ```data``` with the training data found at [this Google Drive link](https://drive.google.com/drive/folders/1W5KNbdWM1vSMg7TYqf1RRvcL_uhZPbUP?usp=sharing).
-Note that make_and_return_training_data.py in src/training/training_util.py natively combines training images and captions for all 3 of CLIP's failure modes. You can mix and match them by specifying certain datasets.
+Note that make_and_return_training_data.py in src/training/training_util.py natively combines training images and captions for all 3 of CLIP's failure modes. You can mix and match them by specifying certain datasets. Also, note that per [Sec. B2 of our paper](https://arxiv.org/pdf/2503.08723), the attribute-wise opposite_image for COCO_train is missing. As such, it must be set to None and the contrastive pair should be composed only of the opposite caption and images/captions from other batch indices.
 
 For evaluation, also add ```val2017``` from [COCO](https://cocodataset.org/#download), the CVLEVR-bind dataset from [this github repository](https://github.com/marthaflinderslewis/clip-binding), the datasets necessary for NegBench from [this github repository](https://github.com/m1k2zoo/negbench/blob/main/datasets.md), and the composite NCD dataset from [this Google Drive link](https://drive.google.com/drive/folders/1OohHr8L1YcEYpIEDQKP-HMQsNcXdj71_?usp=drive_link).
 
